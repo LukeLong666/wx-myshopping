@@ -1,4 +1,11 @@
+
+let ajaxTimes=0;
 export const request=(params)=>{
+  ajaxTimes++;
+  wx.showLoading({
+    title: '加载中',
+    mask:true
+  });
   //定义公共url
   //const baseUrl = "https://";
   //
@@ -10,6 +17,14 @@ export const request=(params)=>{
       },
       fail:(err)=>{
         reject(err);
+      },
+      complete:()=>{
+        ajaxTimes--;
+        if(ajaxTimes===0){
+          setTimeout(() => {
+            wx.hideLoading();
+          }, 200);
+        }
       }
     });
   })
