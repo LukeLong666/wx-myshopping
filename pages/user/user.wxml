@@ -45,7 +45,7 @@
           <view class="iconfont icon-shouhuodizhi"></view>
           <view class="order_name">待收货</view>
         </navigator>
-        <navigator>
+        <navigator url="/pages/feedback/feedback">
           <view class="iconfont icon-fenxiang"></view>
           <view class="order_name">退款/退货</view>
         </navigator>
