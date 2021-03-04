@@ -51,3 +51,48 @@ export const showModal=({content})=>{
     })
   })
 }
+
+export const showToast=({title})=>{
+  return new Promise((resolve,reject)=>{
+    wx.showToast({
+      title: title,
+      duration: 2000,
+      icon: 'none',
+      success: (res) => {
+        resolve(res);
+      },
+      fail: (res) => {
+        reject(res);
+      },
+      complete: (res) => {},
+    })
+  })
+}
+
+export const login=()=>{
+  return new Promise((resolve,reject)=>{
+    wx.login({
+      timeout: 10000,
+      success: (result) => {
+        resolve(result);
+      },
+      fail: (res) => {
+        reject(res);
+      }
+    })
+  })
+}
+
+export const requestPayment=(pay)=>{
+  return new Promise((resolve,reject)=>{
+    wx.requestPayment({
+      ...pay,
+      success:(result)=>{
+        resolve(result);
+      },
+      fail:(err)=>{
+        reject(err);
+      }
+    })
+  });
+}

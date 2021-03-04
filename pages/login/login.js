@@ -8,6 +8,15 @@ Page({
 
   },
 
+  handleGetUserInfo(e){
+    console.log(e);
+    const {userInfo} = e.detail;
+    wx.setStorageSync('userInfo', userInfo); 
+    wx.navigateTo({
+      url: '/pages/user/user'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
