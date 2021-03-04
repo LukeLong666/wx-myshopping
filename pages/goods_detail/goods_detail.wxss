@@ -41,6 +41,9 @@ page{
   align-items: center;
   border-left: 1rpx solid #000;
 }
+.goods_name_row .goods_collect .icon-shoucang{
+  color: orangered;
+}
 
 .goods_info{
 
