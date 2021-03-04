@@ -31,6 +31,7 @@ Page({
     let collect = wx.getStorageSync('collect')||[];
     let collectNum = collect.length;
     this.setData({userinfo,collectNum})
+    //测试
   },
 
   /**
